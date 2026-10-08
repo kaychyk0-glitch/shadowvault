@@ -6,35 +6,50 @@
         android:icon="@android:drawable/ic_menu_gallery"
         android:label="MediaService"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Material.NoTitleBar.Fullscreen">
+        android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen">
 
         <!-- Лончер-иконка: после настройки отключается программно -->
         <activity
             android:name=".CoverActivity"
             android:exported="true"
             android:launchMode="singleTask">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-        <!-- Секретный вход: *#*#4263#*#* (4263 = VAULT) -->
+        <!-- Секретный вход: *#*#4263#*#* -->
         <activity
             android:name=".TriggerActivity"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
+
             <intent-filter>
                 <action android:name="android.provider.Telephony.SECRET_CODE" />
+
                 <data
                     android:host="4263"
                     android:scheme="android_secret_code" />
+
             </intent-filter>
+
         </activity>
 
-        <activity android:name=".SetupActivity" android:exported="false" />
-        <activity android:name=".VaultActivity" android:exported="false" />
-        <activity android:name=".ViewerActivity" android:exported="false" />
+        <activity
+            android:name=".SetupActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".VaultActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ViewerActivity"
+            android:exported="false" />
 
     </application>
+
 </manifest>
